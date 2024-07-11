@@ -245,3 +245,37 @@ violates the extension specification or the extension version mismatch
 |	| > -127	| Vendor specific
 |===
 
+== Service Groups
+A service group is a collection of services which are logically grouped
+according to the functionality they provide. For example, all voltage related
+services/messages are collectively referred to as the Voltage Service Group.
+
+This specification defines standard service groups and services with the
+provision to add more service groups as per requirement in the future.
+
+Following table lists the service group
+
+[#table_service_groups]
+.Service Groups
+[cols="2, 4", width=100%, align="center", options="header"]
+|===
+| Service Group ID	| Service Group Name
+| 0x00001		| BASE
+| 0x00002		| SYSTEM_RESET
+| 0x00003		| SYSTEM_SUSPEND
+| 0x00004		| HART_STATE_MANAGEMENT
+| 0x00005		| CPPC
+| 0x00006		| VOLTAGE
+| 0x00007		| CLOCK
+| 0x00008		| DEVICE_POWER
+| 0x00009		| PERFORMANCE
+| 0x0000A		| MM_SERVICE
+| 0x0000B		| RAS_AGENT
+| 0x0000C - 0x7FFFF 	| _Reserved for Future Use_
+| 0x80000 - 0xFFFFF	| _Implementation Specific Service Groups_
+|===
+NOTE: The services listed within each service group do not have a specific order.
+Additionally, the sequence in which services are defined in the specification
+does not necessarily reflect the order in which they should be called in the
+implementation.
+
